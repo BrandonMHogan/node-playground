@@ -1,0 +1,21 @@
+{
+  "name": "library",
+  "description": "a test library",
+  "main": "app.js",
+  "authors": [
+    "Brandon Hogan"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/BrandonMHogan/node-playground",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}
