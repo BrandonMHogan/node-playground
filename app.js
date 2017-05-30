@@ -4,10 +4,12 @@ var app = express();
 var port = process.env.PORT || 5001;
 
 app.use(express.static('public'));
-app.use(express.static('src/views'));
+//app.use(express.static('src/views'));
+app.set('views', './src/views');
+app.set('view engine', 'jade');
 
 app.get('/', function(req, res) {
-    res.send('Hello world');
+    res.render('index');
 });
 
 app.get('/books', function(req, res) {
