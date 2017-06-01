@@ -9,6 +9,9 @@
   "author": "Brandon Hogan",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongoose": "^4.10.4"
   }
 }
