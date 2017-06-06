@@ -6,7 +6,14 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 
-var db = mongoose.connect('mongodb://localhost/bookAPI');
+var db;
+
+// This enviroment variable is set in the gulp file for testing
+if(process.env.ENV == 'test')
+    db = mongoose.connect('mongodb://localhost/bookAPI_test');
+else {
+    db = mongoose.connect('mongodb://localhost/bookAPI');
+}
 
 var Book = require('./models/bookModel');
 
@@ -28,6 +35,14 @@ app.get('/', function(req, res) {
     res.send('Welcome to my API');
 });
 
+app.post('/w', function(req, res) {
+    res.status(200);
+    res.json(req.body);
+});
+
 app.listen(port, function() {
     console.log('Running on PORT: ' + port);
 });
+
+// Must be exported so that it can be used in the integration test
+module.exports = app;
